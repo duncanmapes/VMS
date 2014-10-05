@@ -19,7 +19,9 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'driver',array('span'=>5)); ?>
+            <?php //echo $form->textFieldControlGroup($model,'driver',array('span'=>5)); ?>
+             <?php echo $form->dropDownListControlGroup($model, 'driver',  CHtml::listData(Driver::model()->findAll(), 'id', 'name')); ?>
+
 
             <?php //echo $form->textFieldControlGroup($model,'vehicle',array('span'=>5)); ?>
             
@@ -27,7 +29,24 @@
 
             <?php echo $form->textFieldControlGroup($model,'location',array('span'=>5)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'tripday',array('span'=>5)); ?>
+<?php echo $form->labelEx($model,'tripday'); ?>
+<?php
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+    'model' => $model,
+    'attribute' => 'tripday',
+      'options' => array(
+                              'mode'=>'focus',
+                              'dateFormat'=>'yy-mm-dd',
+                              'showAnim' => 'slideDown',
+                              ),
+    'htmlOptions' => array(
+        'size' => '10',         // textField size
+        'maxlength' => '10',    // textField maxlength
+    ),
+));
+?>
+<?php echo $form->error($model,'tripday'); ?>
+</div>
 
             <?php echo $form->textFieldControlGroup($model,'start_mileage',array('span'=>5)); ?>
 
