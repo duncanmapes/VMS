@@ -68,7 +68,7 @@ class TripLog extends CActiveRecord
 			'driver' => 'Driver',
 			'vehicle' => 'Vehicle',
 			'location' => 'Location',
-			'tripday' => 'Tripday',
+			'tripday' => 'Trip Date',
 			'start_mileage' => 'Start Mileage',
 			'end_mileage' => 'End Mileage',
 			'user' => 'User',
