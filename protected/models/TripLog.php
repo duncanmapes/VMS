@@ -11,7 +11,7 @@
  * @property string $tripday
  * @property integer $start_mileage
  * @property integer $end_mileage
- * @property string $user
+ * @property integer $user
  *
  * The followings are the available model relations:
  * @property Driver $driver0
@@ -37,8 +37,7 @@ class TripLog extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('driver, vehicle, location, tripday, start_mileage, end_mileage, user', 'required'),
-			array('driver, vehicle, location, start_mileage, end_mileage', 'numerical', 'integerOnly'=>true),
-			array('user', 'length', 'max'=>45),
+			array('driver, vehicle, location, start_mileage, end_mileage, user', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, driver, vehicle, location, tripday, start_mileage, end_mileage, user', 'safe', 'on'=>'search'),
@@ -101,7 +100,7 @@ class TripLog extends CActiveRecord
 		$criteria->compare('tripday',$this->tripday,true);
 		$criteria->compare('start_mileage',$this->start_mileage);
 		$criteria->compare('end_mileage',$this->end_mileage);
-		$criteria->compare('user',$this->user,true);
+		$criteria->compare('user',$this->user);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -19,8 +19,6 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'id',array('span'=>5,'maxlength'=>45)); ?>
-
             <?php echo $form->textFieldControlGroup($model,'username',array('span'=>5,'maxlength'=>16)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>255)); ?>

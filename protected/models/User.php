@@ -4,7 +4,7 @@
  * This is the model class for table "user".
  *
  * The followings are the available columns in table 'user':
- * @property string $id
+ * @property integer $id
  * @property string $username
  * @property string $email
  * @property string $password
@@ -31,8 +31,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, username, password', 'required'),
-			array('id', 'length', 'max'=>45),
+			array('username, password', 'required'),
 			array('username', 'length', 'max'=>16),
 			array('email', 'length', 'max'=>255),
 			array('password', 'length', 'max'=>32),
@@ -87,7 +86,7 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);

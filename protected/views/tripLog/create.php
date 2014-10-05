@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Submit TripLog</h1>
+<h1>Create TripLog</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
