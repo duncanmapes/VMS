@@ -2,9 +2,13 @@
 *.pyc
 *.pyo
 
+.DS_Store
 
 assets/*
 !assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
+
+.project
+.settings/*
