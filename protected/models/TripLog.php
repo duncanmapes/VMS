@@ -7,11 +7,13 @@
  * @property integer $id
  * @property integer $driver
  * @property integer $vehicle
- * @property integer $location
+ * @property integer $Office
  * @property string $tripday
  * @property integer $start_mileage
  * @property integer $end_mileage
  * @property integer $user
+ * @property string $start_location
+ * @property string $destination
  *
  * The followings are the available model relations:
  * @property Driver $driver0
@@ -36,11 +38,12 @@ class TripLog extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('driver, vehicle, location, tripday, start_mileage, end_mileage, user', 'required'),
-			array('driver, vehicle, location, start_mileage, end_mileage, user', 'numerical', 'integerOnly'=>true),
+			array('driver, vehicle, Office, tripday, start_mileage, end_mileage, user, start_location, destination', 'required'),
+			array('driver, vehicle, Office, start_mileage, end_mileage, user', 'numerical', 'integerOnly'=>true),
+			array('start_location, destination', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, driver, vehicle, location, tripday, start_mileage, end_mileage, user', 'safe', 'on'=>'search'),
+			array('id, driver, vehicle, Office, tripday, start_mileage, end_mileage, user, start_location, destination', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,11 +70,13 @@ class TripLog extends CActiveRecord
 			'id' => 'ID',
 			'driver' => 'Driver',
 			'vehicle' => 'Vehicle',
-			'location' => 'Location',
-			'tripday' => 'Trip Date',
+			'Office' => 'Office',
+			'tripday' => 'Tripday',
 			'start_mileage' => 'Start Mileage',
 			'end_mileage' => 'End Mileage',
 			'user' => 'User',
+			'start_location' => 'Start Location',
+			'destination' => 'Destination',
 		);
 	}
 
@@ -96,11 +101,13 @@ class TripLog extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('driver',$this->driver);
 		$criteria->compare('vehicle',$this->vehicle);
-		$criteria->compare('location',$this->location);
+		$criteria->compare('Office',$this->Office);
 		$criteria->compare('tripday',$this->tripday,true);
 		$criteria->compare('start_mileage',$this->start_mileage);
 		$criteria->compare('end_mileage',$this->end_mileage);
 		$criteria->compare('user',$this->user);
+		$criteria->compare('start_location',$this->start_location,true);
+		$criteria->compare('destination',$this->destination,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
