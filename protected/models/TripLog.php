@@ -17,6 +17,7 @@
  *
  * The followings are the available model relations:
  * @property Driver $driver0
+ * @property Office $office0
  * @property User $user0
  * @property Vehicle $vehicle0
  */
@@ -38,12 +39,12 @@ class TripLog extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('driver, vehicle, Office, tripday, start_mileage, end_mileage, user, start_location, destination', 'required'),
-			array('driver, vehicle, Office, start_mileage, end_mileage, user', 'numerical', 'integerOnly'=>true),
+			array('driver, vehicle, office, tripday, start_mileage, end_mileage, user, start_location, destination', 'required'),
+			array('driver, vehicle, office, start_mileage, end_mileage, user', 'numerical', 'integerOnly'=>true),
 			array('start_location, destination', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, driver, vehicle, Office, tripday, start_mileage, end_mileage, user, start_location, destination', 'safe', 'on'=>'search'),
+			array('id, driver, vehicle, office, tripday, start_mileage, end_mileage, user, start_location, destination', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +57,7 @@ class TripLog extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'driver0' => array(self::BELONGS_TO, 'Driver', 'driver'),
+			'office0' => array(self::BELONGS_TO, 'Office', 'office'),
 			'user0' => array(self::BELONGS_TO, 'User', 'user'),
 			'vehicle0' => array(self::BELONGS_TO, 'Vehicle', 'vehicle'),
 		);
@@ -70,8 +72,8 @@ class TripLog extends CActiveRecord
 			'id' => 'ID',
 			'driver' => 'Driver',
 			'vehicle' => 'Vehicle',
-			'Office' => 'Office',
-			'tripday' => 'Trip Date',
+			'office' => 'Office',
+			'tripday' => 'Tripday',
 			'start_mileage' => 'Start Mileage',
 			'end_mileage' => 'End Mileage',
 			'user' => 'User',
@@ -101,7 +103,7 @@ class TripLog extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('driver',$this->driver);
 		$criteria->compare('vehicle',$this->vehicle);
-		$criteria->compare('Office',$this->Office);
+		$criteria->compare('office',$this->office);
 		$criteria->compare('tripday',$this->tripday,true);
 		$criteria->compare('start_mileage',$this->start_mileage);
 		$criteria->compare('end_mileage',$this->end_mileage);

@@ -17,7 +17,7 @@
 
                     <?php echo $form->textFieldControlGroup($model,'vehicle',array('span'=>5)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'location',array('span'=>5)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'office',array('span'=>5)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'tripday',array('span'=>5)); ?>
 
@@ -26,6 +26,10 @@
                     <?php echo $form->textFieldControlGroup($model,'end_mileage',array('span'=>5)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'user',array('span'=>5)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'start_location',array('span'=>5,'maxlength'=>45)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'destination',array('span'=>5,'maxlength'=>45)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>

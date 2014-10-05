@@ -50,12 +50,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'driver',
 		'vehicle',
-		'location',
+		'office',
 		'tripday',
 		'start_mileage',
 		/*
 		'end_mileage',
 		'user',
+		'start_location',
+		'destination',
 		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

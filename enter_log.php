@@ -26,7 +26,7 @@ include ('includes/head.php');
 					<form id="tripLogForm" action="" method="post" class="form-horizontal">
 
 						<div class="form-group">
-							<label class="col-md-5 control-label" for="vehicleINP">Choose the Vehicle you drove:</label>
+							<label class="col-md-5 control-label" for="vehicleINP">Choose the Vehicle:</label>
 							<div class="col-md-4">
 								<select class="form-control" id="vehicleINP" name="vechicle">
 									<option value="SC3563">SC3563</option>
@@ -46,7 +46,7 @@ include ('includes/head.php');
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-5 control-label" for="driverINP">Choose the Driver for this trip:</label>
+							<label class="col-sm-5 control-label" for="driverINP">Choose the Driver:</label>
 							<div class="col-sm-5">
 								<select class="form-control" id="driverINP" name="driver">
 									<option value="1">George</option>

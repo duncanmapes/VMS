@@ -10,7 +10,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('driver')); ?>:</b>
-	<?php echo CHtml::encode($data->driver); ?>
+	<?php echo CHtml::encode($data->driver0->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('vehicle')); ?>:</b>
@@ -32,6 +32,14 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('end_mileage')); ?>:</b>
 	<?php echo CHtml::encode($data->end_mileage); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('start_location')); ?>:</b>
+    <?php echo CHtml::encode($data->start_location); ?>
+    <br />
+
+<b><?php echo CHtml::encode($data->getAttributeLabel('destination')); ?>:</b>
+    <?php echo CHtml::encode($data->destination); ?>
+    <br />
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('user')); ?>:</b>
