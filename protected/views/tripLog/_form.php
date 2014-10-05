@@ -22,12 +22,15 @@
             <?php //echo $form->textFieldControlGroup($model,'driver',array('span'=>5)); ?>
              <?php echo $form->dropDownListControlGroup($model, 'driver',  CHtml::listData(Driver::model()->findAll(), 'id', 'name')); ?>
 
+                        <?php echo $form->dropDownListControlGroup($model, 'office',  CHtml::listData(Office::model()->findAll(), 'id', 'office_name')); ?>
+
 
             <?php //echo $form->textFieldControlGroup($model,'vehicle',array('span'=>5)); ?>
             
             <?php echo $form->dropDownListControlGroup($model, 'vehicle',  CHtml::listData(Vehicle::model()->findAll(), 'id', 'tag')); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'location',array('span'=>5)); ?>
+
+            <?php //echo $form->textFieldControlGroup($model,'location',array('span'=>5)); ?>
 
 <?php echo $form->labelEx($model,'tripday'); ?>
 <?php

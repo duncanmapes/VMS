@@ -17,8 +17,8 @@
 	<?php echo CHtml::encode($data->vehicle); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('location')); ?>:</b>
-	<?php echo CHtml::encode($data->location); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('office')); ?>:</b>
+	<?php echo CHtml::encode($data->office); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tripday')); ?>:</b>
